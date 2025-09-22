@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeepSeek AI Chatbot</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1><i class="fas fa-robot"></i> DeepSeek AI Assistant</h1>
+                <div class="header-actions">
+                    <button id="clearChat" class="btn-secondary">
+                        <i class="fas fa-trash"></i> Clear Chat
+                    </button>
+                    <button id="themeToggle" class="btn-secondary">
+                        <i class="fas fa-moon"></i> Theme
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Chat Container -->
+        <main class="chat-container">
+            <div id="chatMessages" class="chat-messages">
+                <div class="welcome-message">
+                    <div class="welcome-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h2>Welcome to DeepSeek AI!</h2>
+                    <p>I'm your AI assistant. How can I help you today?</p>
+                    <div class="suggestions">
+                        <button class="suggestion-btn" data-prompt="Explain quantum computing in simple terms">
+                            🤔 Explain quantum computing
+                        </button>
+                        <button class="suggestion-btn" data-prompt="Help me write a Python function to calculate fibonacci sequence">
+                            💻 Help with Python code
+                        </button>
+                        <button class="suggestion-btn" data-prompt="What are the latest developments in AI?">
+                            🔬 Latest AI developments
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Typing Indicator -->
+            <div id="typingIndicator" class="typing-indicator">
+                <div class="typing-dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <span>DeepSeek is typing...</span>
+            </div>
+
+            <!-- Input Area -->
+            <div class="input-container">
+                <div class="input-wrapper">
+                    <textarea 
+                        id="messageInput" 
+                        placeholder="Type your message here... (Press Shift+Enter for new line, Enter to send)" 
+                        rows="1"
+                    ></textarea>
+                    <button id="sendButton" class="send-btn">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+                <div class="input-actions">
+                    <span class="char-count">0/4000</span>
+                    <label class="api-setting">
+                        <input type="checkbox" id="streamToggle"> Stream responses
+                    </label>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Powered by <strong>DeepSeek API</strong> | Built with ❤️ for AI enthusiasts</p>
+        </footer>
+    </div>
+
+    <!-- Loading Modal -->
+    <div id="loadingModal" class="modal">
+        <div class="modal-content">
+            <div class="loader"></div>
+            <p>Processing your request...</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
